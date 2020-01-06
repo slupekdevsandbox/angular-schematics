@@ -16,9 +16,9 @@
     "sandbox:link": "lerna exec -- yarn link",
     "sandbox:unlink:windows": "lerna exec -- npx manage-linked-packages -m yarn -a reset -n %LERNA_PACKAGE_NAME%",
     "sandbox:unlink:linux": "lerna exec -- npx manage-linked-packages -m yarn -a reset -n $LERNA_PACKAGE_NAME",
-    "sandbox:test:ci": "yarn sandbox:clean && yarn sandbox:run:ide",
+    "sandbox:run:all": "yarn sandbox:clean && yarn sandbox:run:ide",
     "sandbox:test": "cd sandbox && yarn lint && ng test --watch=false --progress=false && yarn e2e && yarn build",
-    "ci:sandbox": "yarn sandbox:install && yarn sandbox:link && yarn sandbox:test:ci && yarn sandbox:test",
+    "ci:sandbox": "yarn sandbox:install && yarn sandbox:link && yarn sandbox:run:all && yarn sandbox:test",
     "ci:build": "yarn bootstrap && yarn build",
     "ci:test": "yarn test"
   },
