@@ -1,0 +1,18 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+    - name: Run Yarn
+      run: yarn
+    - name: Bootstrap & Build packages
+      run: yarn ci:build
+    - name: Run tests
+      run: yarn ci:test
