@@ -19,12 +19,8 @@ jobs:
     #- name: Run tests
     #  run: yarn ci:test
     - name: Setup & run packages on sandbox
-    #  run: yarn ci:sandbox  
-      run: |
-          yarn sandbox:install
-          yarn sandbox:link
-          yarn sandbox:clean
-          cd sandbox
-          ng --version
+      run: cd sandbox && yarn
+    - name: Setup & run packages on sandbox step 2
+      run: yarn ng --version
     env:
       CI: yes
