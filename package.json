@@ -11,7 +11,7 @@
     "clean:build": "lerna exec -- rimraf lib",
     "ls": "lerna ls",
     "sandbox:install": "cd sandbox && yarn",
-    "sandbox:run:ide": "cd sandbox && ng add @objectivity/angular-schematic-ide --vscode",
+    "sandbox:run:ide": "cd sandbox && yarn ng add @objectivity/angular-schematic-ide --vscode",
     "sandbox:clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
     "sandbox:link": "lerna exec -- yarn link",
     "sandbox:unlink:windows": "lerna exec -- npx manage-linked-packages -m yarn -a reset -n %LERNA_PACKAGE_NAME%",
