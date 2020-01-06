@@ -8,7 +8,16 @@
     "test": "lerna run test",
     "clean": "lerna clean",
     "clean:build": "lerna exec -- rimraf lib",
-    "ls": "lerna ls"
+    "ls": "lerna ls",
+    "sandbox:install": "cd sandbox && yarn",
+    "sandbox:run:ide": "cd sandbox && ng add @objectivity/angular-schematic-ide --vscode",
+    "sandbox:clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
+    "sandbox:link": "lerna exec -- yarn link",
+    "sandbox:unlink:windows": "lerna exec -- npx manage-linked-packages -m yarn -a reset -n %LERNA_PACKAGE_NAME%",
+    "sandbox:unlink:linux": "lerna exec -- npx manage-linked-packages -m yarn -a reset -n $LERNA_PACKAGE_NAME",
+    "sandbox:test:ci": "yarn sandbox:clean && yarn sandbox:run:ide",
+    "sandbox:test": "cd sandbox && yarn lint && ng test --watch=false --progress=false && yarn e2e && yarn build",
+    "ci": "yarn sandbox:install && yarn sandbox:link && yarn sandbox:test:ci && yarn sandbox:test"
   },
   "workspaces": [
     "packages/*"
