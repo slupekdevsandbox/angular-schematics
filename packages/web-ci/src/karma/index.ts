@@ -58,7 +58,7 @@ function updateKarmaConfiguration(options: Schema): Rule {
             const buffer = host.read(karmaPath);
             if (buffer !== null) {
                 let content = buffer.toString();
-                content = content.replace(/plugins: \[(\n\s+)/gm, 'plugins: \[$1require(\'karma-junit-reporter\'),$1');
+                content = content.replace(/plugins: \[(\r\n\s+)/gm, 'plugins: \[$1require(\'karma-junit-reporter\'),$1');
                 content = content.replace(/(reports: \[)/gm, `$1'cobertura', `);
                 content = content.replace(/(reporters: \[)/gm, `$1'junit', `);
                 content = content.replace(/(\n\s+)(port:)/gm, `$1junitReporter: { outputDir: './junit' },$1$2`);
