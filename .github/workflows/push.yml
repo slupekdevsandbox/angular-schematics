@@ -1,4 +1,4 @@
-name: CI
+name: Push
 
 on: [push]
 
@@ -14,12 +14,5 @@ jobs:
       run: yarn
     - name: Bootstrap & Build packages
       run: yarn ci:build   
-    #- name: Run tests
-    #  run: yarn ci:test
-    - name: Setup & run packages on sandbox
+    - name: Execute the schematic against the sandbox
       run: yarn ci:sandbox
-      #run: yarn sandbox:install && yarn sandbox:link && yarn sandbox:run:all
-    #- name: Setup & run packages on sandbox
-    #  run: git diff
-
-
