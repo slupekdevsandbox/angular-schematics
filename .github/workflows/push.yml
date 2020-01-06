@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  build_and_test:
 
     runs-on: ubuntu-latest
 
@@ -14,5 +14,11 @@ jobs:
       run: yarn
     - name: Bootstrap & Build packages
       run: yarn ci:build
-    - name: Run tests
-      run: yarn ci:test
+    - name: Run packages tests
+      run: yarn ci:build      
+    #- name: Run tests
+    #  run: yarn ci:test
+    - name: Setup & run packages on sandbox
+      run: yarn ci:sandbox  
+    env:
+      CI: yes
