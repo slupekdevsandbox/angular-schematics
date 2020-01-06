@@ -13,12 +13,8 @@ jobs:
     - name: Run Yarn
       run: yarn
     - name: Bootstrap & Build packages
-      run: yarn ci:build
-    - name: Run packages tests
-      run: yarn ci:build      
+      run: yarn ci:build   
     #- name: Run tests
     #  run: yarn ci:test
     - name: Setup & run packages on sandbox
-      run: cd sandbox && yarn
-    - name: Setup & run packages on sandbox step 2
-      run: cd sandbox && yarn ng --version
+      run: yarn ci:sandbox
