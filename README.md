@@ -37,4 +37,4 @@ For testing and development, you can execute your schematic against the applicat
 #### Sandbox Preparation
 
 1. Run `yarn` (no arguments) from the `sandbox` directory.
-1. Run `yarn run link:all` to link schematic packages.
+1. Run `yarn run link:all` to link schematic packages. 
