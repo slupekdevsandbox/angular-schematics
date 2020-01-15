@@ -38,3 +38,4 @@ For testing and development, you can execute your schematic against the applicat
 
 1. Run `yarn` (no arguments) from the `sandbox` directory.
 1. Run `yarn run link:all` to link schematic packages.
+test cache
